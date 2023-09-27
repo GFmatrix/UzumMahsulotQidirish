@@ -59,7 +59,7 @@ for product in products:
   product_link = product.find('a', attrs={"ui-link": "ui-link"}).get('href')
   product_price = product.find('span', attrs={"data-test-id": "text__price"}).text.strip()
   # print(product.find('span', attrs={"data-test-id": "text__rating"}))
-  print(product.find('span', attrs={"data-test-id": "text__orders"}))
+  # print(product.find('span', attrs={"data-test-id": "text__orders"}))
   
   if product.find('span', attrs={"data-test-id": "text__rating"}) != None:
     product_rating = float(product.find('span', attrs={"data-test-id": "text__rating"}).text.strip())  
