@@ -65,8 +65,9 @@ for product in products:
     product_rating = float(product.find('span', attrs={"data-test-id": "text__rating"}).text.strip())  
   else: product_rating=1
     
-  if product.find('span', attrs={"data-test-id": "text__orders"}) != None and product.find('span', attrs={"data-test-id": "text__orders"}) != '':
+  if product.find('span', attrs={"data-test-id": "text__orders"}) != None:
     product_rating_count = str(''.join(filter(str.isdigit, product.find('span', attrs={"data-test-id": "text__orders"}).text.strip())))[2:]
+    if len(product_rating_count) == 0: product_rating_count=1
   else: product_rating_count=1
 
 
